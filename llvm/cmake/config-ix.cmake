@@ -111,7 +111,7 @@ if(HAVE_LIBPTHREAD)
   # have it reported as '-l<lib>' instead of '-pthread'.
   # TODO: switch to -pthread once the rest of the build system can deal with it.
   set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
-  set(THREADS_HAVE_PTHREAD_ARG Off)
+  set(THREADS_PREFER_PTHREAD_FLAG FALSE)
   find_package(Threads REQUIRED)
   set(LLVM_PTHREAD_LIB ${CMAKE_THREAD_LIBS_INIT})
 endif()
