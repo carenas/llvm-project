@@ -107,11 +107,8 @@ endif()
 include(FindLibpfm)
 
 if(HAVE_LIBPTHREAD)
-  # We want to find pthreads library and at the moment we do want to
-  # have it reported as '-l<lib>' instead of '-pthread'.
-  # TODO: switch to -pthread once the rest of the build system can deal with it.
   set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
-  set(THREADS_PREFER_PTHREAD_FLAG FALSE)
+  set(THREADS_PREFER_PTHREAD_FLAG TRUE)
   find_package(Threads REQUIRED)
   set(LLVM_PTHREAD_LIB ${CMAKE_THREAD_LIBS_INIT})
 endif()
